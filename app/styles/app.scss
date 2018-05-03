@@ -6,3 +6,26 @@
 @import "ember-power-select";
 
 @import "z-depth";
+
+// Add min-height utility
+.mnh-100 {
+  min-height: 100%;
+}
+
+// Force create button to bottom right; add depth
+.fixed-bottom {
+  box-shadow: $z-depth-2;
+}
+
+.fixed-bottom.right {
+  left: inherit;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+
+.fixed-bottom.left {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}

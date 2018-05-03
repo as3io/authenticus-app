@@ -7,7 +7,9 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  this.route('apps', function() {});
+  this.route('apps', function() {
+    this.route('create');
+  });
   this.route('users', function() {});
 });
 

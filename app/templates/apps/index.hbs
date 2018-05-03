@@ -1,1 +1,15 @@
-{{outlet}}
+{{#nav-breadcrumbs as |crumbs|}}
+  {{#crumbs.item active=true}}{{entypo-icon "browser"}} Applications{{/crumbs.item}}
+{{/nav-breadcrumbs}}
+
+{{!-- <div class="row">
+  <div class="mb-4 mt-0 col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
+    <div class="card mnh-100 border-0 z-depth-1">
+      <div class="card-header"></div>
+      <div class="card-body"></div>
+      <div class="card-footer"></div>
+    </div>
+  </div>
+</div> --}}
+
+{{model-create-button icon="browser" class="right" title="Create Application" click=(route-action "transitionTo" "apps.create")}}
