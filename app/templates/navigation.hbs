@@ -1,0 +1,19 @@
+<div class="sticky-top z-depth-1-half">
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
+    {{#link-to "index" class="navbar-brand"}}Authenticus{{/link-to}}
+
+    <ul class="navbar-nav mr-auto">
+      {{#link-to "apps.index" tagName="li" class="nav-item"}}
+        {{#link-to "apps.index" class="nav-link" title="Applications"}}
+          {{entypo-icon "browser"}} <span class="d-none d-md-inline">Applications</span>
+        {{/link-to}}
+      {{/link-to}}
+      {{#link-to "users.index" tagName="li" class="nav-item"}}
+        {{#link-to "users.index" class="nav-link" title="Users"}}
+          {{entypo-icon "users"}} <span class="d-none d-md-inline">Users</span>
+        {{/link-to}}
+      {{/link-to}}
+    </ul>
+  </nav>
+
+</div>
