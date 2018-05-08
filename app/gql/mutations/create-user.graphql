@@ -1,0 +1,7 @@
+#import 'authenticus-app/gql/fragments/user'
+
+mutation createUser($input: CreateUserInput!) {
+	createUser(input: $input) {
+    ...UserFragment
+	}
+}

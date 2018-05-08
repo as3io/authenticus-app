@@ -1,0 +1,11 @@
+#import 'authenticus-app/gql/fragments/session'
+#import 'authenticus-app/gql/fragments/user'
+
+fragment AuthenticationFragment on Authentication {
+  session {
+    ...SessionFragment
+  }
+  user {
+    ...UserFragment
+  }
+}
