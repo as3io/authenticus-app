@@ -3,7 +3,7 @@
 {{/nav-breadcrumbs}}
 
 <div class="row">
-  <div class="mb-3 col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
+  {{!-- <div class="mb-3 col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
     <div class="card border-0 z-depth-1">
       <div class="card-header"></div>
       <div class="card-body text-center">
@@ -11,7 +11,7 @@
       </div>
       <div class="card-footer"></div>
     </div>
-  </div>
+  </div> --}}
 
   {{#each model.edges as |edge|}}
     <div class="mb-3 col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
@@ -23,6 +23,8 @@
         <div class="card-footer"></div>
       </div>
     </div>
+  {{else}}
+    <h5 class="text-muted">You have not created any organizations yet.</h5>
   {{/each}}
 
 </div>

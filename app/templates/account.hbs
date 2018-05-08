@@ -1,0 +1,23 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-8 col-lg-6 mx-auto">
+      <div class="card z-depth-1 border-0">
+        <div class="card-header">
+          <ul class="nav nav-pills card-header-pills">
+            {{#link-to "account.login" tagName="li" class="nav-item"}}
+              {{#link-to "account.login" class="nav-link" title="Users"}}
+                Sign In
+              {{/link-to}}
+            {{/link-to}}
+            {{#link-to "account.signup" tagName="li" class="nav-item"}}
+              {{#link-to "account.signup" class="nav-link" title="Users"}}
+                Create Account
+              {{/link-to}}
+            {{/link-to}}
+          </ul>
+        </div>
+        {{outlet}}
+      </div>
+    </div>
+  </div>
+</div>

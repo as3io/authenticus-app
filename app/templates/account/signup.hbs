@@ -1,0 +1,57 @@
+<form {{action "signup" on="submit"}}>
+  <div class="card-body">
+    <h1 class="card-title">Sign Up</h1>
+    <hr>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="signup-given-name">First Name</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">{{entypo-icon "text"}}</span>
+            </div>
+            {{input id="signup-given-name" required=true class="form-control form-control-lg" type="text" value=givenName autocomplete="given-name"}}
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="signup-family-name">Last Name</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">{{entypo-icon "text"}}</span>
+            </div>
+            {{input id="signup-family-name" required=true class="form-control form-control-lg" type="text" value=familyName autocomplete="family-name"}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="signup-username">Email Address</label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">{{entypo-icon "email"}}</span>
+        </div>
+        {{input id="signup-username" required=true class="form-control form-control-lg" type="email" value=username autocomplete="username email"}}
+      </div>
+    </div>
+
+    <div class="form-group mb-0">
+      <label for="signup-password">Password</label>
+        <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">{{entypo-icon "key"}}</span>
+        </div>
+        {{input id="signup-password" required=true class="form-control form-control-lg" type="password" value=password autocomplete="new-password"}}
+      </div>
+    </div>
+  </div>
+  <div class="card-footer">
+    <button type="submit" class="btn btn-block btn-lg btn-primary" disabled={{isLoading}}>Create Account {{entypo-icon "add-user"}}</button>
+    {{#if errorMessage}}
+      <div class="alert-danger mt-3 mb-0 alert" role="alert"><strong>Oh Snap!</strong> {{errorMessage}}</div>
+    {{/if}}
+  </div>
+  {{progress-bar show=isLoading}}
+</form>

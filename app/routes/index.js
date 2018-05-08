@@ -6,18 +6,20 @@ import { getObservable } from 'ember-apollo-client';
 import query from 'authenticus-app/gql/queries/all-organizations';
 
 export default Route.extend(AuthenticatedRouteMixin, RouteQueryManager, {
-  model({ first, after, sortBy, ascending }) {
-    const controller = this.controllerFor(this.get('routeName'));
+  authenticationRoute: 'account.login',
 
-    const pagination = { first, after };
-    const sort = { field: sortBy, order: ascending ? 1 : -1 };
-    const variables = { pagination, sort };
-    if (!sortBy) delete variables.sort.field;
-    return this.get('apollo').watchQuery({ query, variables, fetchPolicy: 'network-only' }, 'allOrganizations')
-      .then((result) => {
-        controller.set('observable', getObservable(result));
-        return result;
-      }).catch(e => this.get('graphErrors').show(e))
-    ;
-  },
+  // model({ first, after, sortBy, ascending }) {
+  //   const controller = this.controllerFor(this.get('routeName'));
+
+  //   const pagination = { first, after };
+  //   const sort = { field: sortBy, order: ascending ? 1 : -1 };
+  //   const variables = { pagination, sort };
+  //   if (!sortBy) delete variables.sort.field;
+  //   return this.get('apollo').watchQuery({ query, variables, fetchPolicy: 'network-only' }, 'allOrganizations')
+  //     .then((result) => {
+  //       controller.set('observable', getObservable(result));
+  //       return result;
+  //     }).catch(e => this.get('graphErrors').show(e))
+  //   ;
+  // },
 });
