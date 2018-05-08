@@ -10,15 +10,17 @@ export default Controller.extend({
   isLoading: false,
 
   actions: {
-    authenticate() {
+    async authenticate() {
       this.set('isLoading', true);
       this.set('errorMessage', null);
       const { username, password } = this.getProperties('username', 'password');
-      this.get('session')
-        .authenticate('authenticator:application', username, password)
-        .catch((error) => this.set('errorMessage', error.errors.length ? error.errors[0].message : 'An unknown error has occurred.'))
-        .finally(() => this.set('isLoading', false))
-      ;
+      try {
+        await this.get('session').authenticate('authenticator:application', username, password);
+      } catch (e) {
+        this.set('errorMessage', e.errors.length ? e.errors[0].message : 'An unknown error has occurred.')
+      } finally {
+        this.set('isLoading', false)
+      }
     }
   }
 });
