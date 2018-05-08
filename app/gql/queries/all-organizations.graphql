@@ -1,0 +1,17 @@
+#import 'authenticus-app/gql/fragments/organization/list'
+
+query AllOrganizations($pagination: PaginationInput, $sort: OrganizationSortInput) {
+	allOrganizations(pagination: $pagination, sort: $sort) {
+		totalCount
+		edges {
+			node {
+				...OrganizationListFragment
+			}
+			cursor
+		}
+		pageInfo {
+			hasNextPage
+			endCursor
+		}
+	}
+}

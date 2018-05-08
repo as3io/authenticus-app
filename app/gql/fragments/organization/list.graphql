@@ -1,0 +1,5 @@
+fragment OrganizationListFragment on Organization {
+  id
+  name
+  description
+}

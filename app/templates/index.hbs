@@ -1,0 +1,30 @@
+{{#nav-breadcrumbs as |crumbs|}}
+  {{#crumbs.item active=true}}{{entypo-icon "browser"}} Organizations{{/crumbs.item}}
+{{/nav-breadcrumbs}}
+
+<div class="row">
+  <div class="mb-3 col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
+    <div class="card border-0 z-depth-1">
+      <div class="card-header"></div>
+      <div class="card-body text-center">
+        <h5 class="card-title">{{entypo-icon "pencil"}} Create Organization</h5>
+      </div>
+      <div class="card-footer"></div>
+    </div>
+  </div>
+
+  {{#each model.edges as |edge|}}
+    <div class="mb-3 col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
+      <div class="card border-0 z-depth-1">
+        <div class="card-header"></div>
+        <div class="card-body text-center">
+          <h5 class="card-title">{{edge.node.name}}</h5>
+        </div>
+        <div class="card-footer"></div>
+      </div>
+    </div>
+  {{/each}}
+
+</div>
+
+
