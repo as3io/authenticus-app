@@ -1,0 +1,13 @@
+{{#if user.isAuthenticated}}
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)" role="button">
+      {{entypo-icon "network"}} Organizations
+    </a>
+    <div class="dropdown-menu">
+      {{#each edges as |edge|}}
+        {{log edge}}
+        {{#link-to "authenticated.organization" edge.node.id class="dropdown-item"}}{{edge.node.name}}{{/link-to}}
+      {{/each}}
+    </div>
+  </li>
+{{/if}}
