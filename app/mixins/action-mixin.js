@@ -1,5 +1,5 @@
 import Mixin from '@ember/object/mixin';
-import LoadingMixin from 'fortnight/mixins/loading-mixin';
+import LoadingMixin from 'authenticus-app/mixins/loading-mixin';
 
 export default Mixin.create(LoadingMixin, {
   isActionRunning: false,
