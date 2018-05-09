@@ -1,5 +1,5 @@
 {{#nav-breadcrumbs as |crumbs|}}
-  {{#crumbs.item active=true}}{{entypo-icon "browser"}} Organizations{{/crumbs.item}}
+  {{#crumbs.item active=true}}{{entypo-icon "network"}} Organizations{{/crumbs.item}}
 {{/nav-breadcrumbs}}
 
 <div class="row">
@@ -20,4 +20,4 @@
   {{/each}}
 </div>
 
-
+{{model-create-button icon="network" class="right" title="Create Organization" click=(route-action "transitionTo" "orgs.create")}}

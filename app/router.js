@@ -7,12 +7,18 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  this.route('orgs', { path: '' }, function() {
-    this.route('apps', function() {
+  this.route('authenticated', { path: '' }, function() {
+    this.route('organizations', function() {
       this.route('create');
     });
-    this.route('users', function() {
-      this.route('create');
+
+    this.route('organization', { path: ':org_id' }, function() {
+      this.route('apps', function() {
+        this.route('create');
+      });
+      this.route('users', function() {
+        this.route('create');
+      });
     });
   });
 
