@@ -1,0 +1,7 @@
+#import 'authenticus-app/gql/fragments/user'
+
+mutation updateCurrentUserProfile($input: CurrentUserProfileInput!) {
+  updateCurrentUserProfile(input: $input) {
+    ...UserFragment
+  }
+}
