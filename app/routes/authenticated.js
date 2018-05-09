@@ -3,7 +3,7 @@ import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-rout
 import RouteQueryManager from 'ember-apollo-client/mixins/route-query-manager';
 import { getObservable } from 'ember-apollo-client';
 
-import query from 'authenticus-app/gql/queries/all-organizations';
+import query from 'authenticus-app/gql/queries/organization-list';
 
 export default Route.extend(AuthenticatedRouteMixin, RouteQueryManager, {
   authenticationRoute: 'account.login',

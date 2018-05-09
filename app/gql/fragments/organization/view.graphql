@@ -1,0 +1,7 @@
+#import 'authenticus-app/gql/fragments/organization/list'
+
+fragment OrganizationViewFragment on Organization {
+  ...OrganizationListFragment
+  createdAt
+  updatedAt
+}

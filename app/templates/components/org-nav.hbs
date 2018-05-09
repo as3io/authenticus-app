@@ -5,9 +5,10 @@
     </a>
     <div class="dropdown-menu">
       {{#each edges as |edge|}}
-        {{log edge}}
         {{#link-to "authenticated.organization" edge.node.id class="dropdown-item"}}{{edge.node.name}}{{/link-to}}
       {{/each}}
+      <div class="dropdown-divider"></div>
+      {{#link-to "authenticated.organizations.create" class="dropdown-item"}}{{entypo-icon "plus"}} Create New{{/link-to}}
     </div>
   </li>
 {{/if}}

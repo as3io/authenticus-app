@@ -1,0 +1,7 @@
+#import 'authenticus-app/gql/fragments/organization/view'
+
+query Organization($input: ModelIdInput!) {
+	organization(input: $input) {
+		...OrganizationViewFragment
+	}
+}
