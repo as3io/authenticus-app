@@ -7,7 +7,7 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  this.route('orgs', function() {
+  this.route('orgs', { path: '' }, function() {
     this.route('apps', function() {
       this.route('create');
     });

@@ -3,6 +3,8 @@ import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mi
 import ActionMixin from 'authenticus-app/mixins/action-mixin';
 
 export default Route.extend(ApplicationRouteMixin, ActionMixin, {
+  routeAfterAuthentication: 'orgs',
+
   actions: {
     showLoading() {
       this.showLoading();
